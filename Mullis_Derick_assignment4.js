@@ -5,6 +5,8 @@
 
 var library = function(){
 
+
+
 //round 2 decimal places
 
 var decimalPlaces = function (value, decimal) {
@@ -12,12 +14,18 @@ var decimalPlaces = function (value, decimal) {
 	return n;
 };
 
+
+
+
 //Smallest Number in an array that is greater than the given number ****NOT WORKING****
 
 var smallestNumber = function ([array], number) {
 	
 
 };
+
+
+
 
 
 //Verify pattern for email address ****NOT WORKING****
@@ -63,8 +71,30 @@ var emailVerify = function(email) {
 //};
 
 
-//Convert a string of numbers into a number value ****NOT WORKING****
 
+
+
+//Convert a string into a number value
+	var numberConvert = function (string1, string2) {
+		var conversion1 = Math.floor(string1)
+		var conversion2 = Math.floor(string2)
+		return (conversion1 + conversion2);	
+};
+
+
+
+//Replace a seperator ****NOT WORKING****
+	var replaceSeperator = function(string, seperator, replacement) {
+			var stringSplit = string.split("")
+			var replacedString = function (stringSplit) {
+				for (var i=0; i <= stringSplit.length; i++) {
+				    	if (stringSplit[i] == seperator)
+        					stringSplit[i] = replacement;
+        				return stringSplit[i];
+				};	
+			};
+			var replaceSeperator = replacedString
+};
 
 
 
@@ -85,6 +115,9 @@ var emailVerify = function(email) {
 
 
 
+
+
+
 //Title Case a string ****NOT WORKING****
 
 var upperCase = function (caseString) {
@@ -92,13 +125,14 @@ var upperCase = function (caseString) {
 	
 	var theFunction = function(seperateWords) {
 		for ( var i = 0; i <= seperateWords.length; i++ ) {
-			seperateWords[i] = "Updated String" + seperateWords[i].charAt(0).toUpperCase() + seperateWords[i].substring(1);
-		};	
-			console.log("Here: " + theFunction)
-
+			seperateWords[i] = "Updated String: " + seperateWords[i].charAt(0).toUpperCase() + seperateWords[i].substring(1);
+		};
 	};
 }; 
 	
+
+
+
 
 
 
@@ -122,10 +156,15 @@ var phoneNumber = function(number) {
 		"decimalPlaces": decimalPlaces,
 		"emailVerify": emailVerify,
 		"verifyLink": verifyLink,
-		"upperCase": upperCase
+		"upperCase": upperCase,
+		"replaceSeperator": replaceSeperator,
+		"numberConvert": numberConvert
 	};
 
 };	
+
+
+//global variable
 
 var newLib = new library();
 
@@ -138,3 +177,5 @@ console.log("This number will always have specific decimal places: " + newLib.de
 console.log("Is this a valid email address? "+ newLib.emailVerify("dmullis5@fullsail.edu"));
 console.log("Is this link valid? " + newLib.verifyLink("https://codeishard.com"));
 console.log("This string has been cased: " + newLib.upperCase("time management is key"));
+console.log("This is a replaced seperator: " + newLib.replaceSeperator("this,is,sparta!", ",", "/"));
+console.log("This string as been converted to number: " + newLib.numberConvert("50", "50"));
