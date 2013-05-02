@@ -19,7 +19,37 @@ var smallestNumber = function ([array], number) {
 
 };
 
+
+//Verify pattern for email address
+	
+var emailVerify = function (email, seperator) {
+var atSplit = email.split(seperator); 
+	while ( atSplit != "@" ) {
+
+//	for (var verify = "@"; atSplit = verify; verify++) {
+//		var isEmail = atSplit
+//		if (isEmail = "@") {
+		if	([atSplit] = "@") {
+			return true;
+		} else {
+			return false;
+		};
+	
+	}; 
+
+
+};
+
+
+
 //Convert a string of numbers into a number value
+
+
+
+
+//Title Case a string
+
+
 
 
 
@@ -40,8 +70,8 @@ var phoneNumber = function(number) {
 
 	return {
 		"phoneNumber": phoneNumber,
-		"decimalPlaces": decimalPlaces
-		
+		"decimalPlaces": decimalPlaces,
+		"emailVerify": emailVerify
 	};
 
 };	
@@ -51,3 +81,4 @@ var newLib = new library();
 
 console.log("Is this a valid phone number? " + newLib.phoneNumber("704-221-3915"));
 console.log("This number will always have specific decimal places: " + newLib.decimalPlaces(342.2353242, 5));
+console.log("Is this a valid email address? "+ newLib.emailVerify("dmullis5fullsail.edu","."));
