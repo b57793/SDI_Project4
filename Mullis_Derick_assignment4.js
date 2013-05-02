@@ -22,41 +22,31 @@ var smallestNumber = function ([array], number) {
 
 //Verify pattern for email address ****NOT WORKING****
 	
-var emailVerify = function (email, seperator) {
-	var atSplit = email.split(seperator); 
-	var leftSide = atSplit[0].split("");
-	var rightSide = atSplit[1].length;
-	var leftSideCheck = leftSide.indexOf("@");
-	var rightSideSplit = atSplit[1].split("");
-	var rightSideCheck = function (rightSideSplit) {
-		for (i=0; i <= rightSideSplit.length; i++) {
-			if (typeof[i] === 'number') {
-				return (true);
-				} else { 
-				return (false);
-			};
-		};
-			if (leftSideCheck >= 0 && rightSide === 3 && rightSideCheck === false ) {
-				return (true);
-			} else { 
-				return (false);
-			};
+var emailVerify = function(email) {
+	
+	var split = email.split("@");
+	
+	var leftSide = function( split[0] ) {
+		if (typeof(split[0]) === 'string');
+			return (true);
+			} else {
+			return (false);
+		};  
 	};
-		
+	var rightSide = function(split[1]) {
+		if (typeof(split[1]) === 'string') && isNaN) {
+		return (true);
+		} else {
+		return (false);
+		};
+	};
+	
+	if ( leftSide === true && rightSide === true) {
+		return (true);
+		} else {
+		return (false);
+	};
 };
-
-
-//	while ( atSplit != "@" ) {
-//	for (var verify = "@"; atSplit = verify; verify++) {
-//		var isEmail = atSplit
-//		if (isEmail = "@") {
-//		if	([atSplit] = "@") {
-//			return true;
-//		} else {
-//			return false;
-//		};	
-//	}; 
-
 
 
 //Convert a string of numbers into a number value ****NOT WORKING****
@@ -96,6 +86,6 @@ var phoneNumber = function(number) {
 var newLib = new library();
 
 
-console.log("Is this a valid phone number? " + newLib.phoneNumber("704-221-3915"));
+console.log("Is this a valid phone number? " + newLib.phoneNumber("555-555-5555"));
 console.log("This number will always have specific decimal places: " + newLib.decimalPlaces(342.2353242, 5));
-console.log("Is this a valid email address? "+ newLib.emailVerify("dmullis5@fullsail.edu","."));
+console.log("Is this a valid email address? "+ newLib.emailVerify("dmullis5@fullsail.edu"));
