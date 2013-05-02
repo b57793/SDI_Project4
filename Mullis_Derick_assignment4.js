@@ -1,8 +1,5 @@
 //alert("JavaScript works!");
 
-
-
-
 var library = function(){
 
 
@@ -19,24 +16,35 @@ var decimalPlaces = function (value, decimal) {
 
 
 
-//Verify pattern for email address ****NOT WORKING****
+//Verify pattern for email address
 	
 var emailVerify = function(email) {
-	
-	var mainSplit = email.split("@");
-	var split2 = mainSplit[1].split(".");
-	var mainLength = mainSplit.length;
-	var emailBeginning = mainSplit[0];
-		console.log("Is this it? " + emailBeginning);	
-	
-	var leftSide = function(mainSplit) {					// make sure to pass in whole array before typeof function is called
-		if (typeof emailBeginning === 'string') {
-			return (true);
-			} else {
+		var address = email;
+		var atSymbol = address.indexOf("@");
+		var dotSymbol = address.lastIndexOf(".");
+		if( atSymbol === -1 || dotSymbol === -1 || (atSymbol+2) >= dotSymbol ) {
 			return (false);
-		};  
-	};
+		} else {
+			return (true);
+		};
 };
+	
+	
+//This fold is failed code for the email
+//	var mainSplit = email.split("@");
+//	var split2 = mainSplit[1].split(".");
+//	var mainLength = mainSplit.length;
+//	var emailBeginning = mainSplit[0];
+//		console.log("Is this it? " + emailBeginning);	
+	
+//	var leftSide = function(mainSplit) {					// make sure to pass in whole array before typeof function is called
+//		if (typeof emailBeginning === 'string') {
+//			return (true);
+//			} else {
+//			return (false);
+//		};  
+//	};
+//};
 
 	
 //		if (typeof(split2[1]) === 'string') {
@@ -65,6 +73,8 @@ var emailVerify = function(email) {
 
 
 
+
+
 //Convert a string into a number value
 	var numberConvert = function (string1, string2) {
 		var conversion1 = Math.floor(string1)
@@ -76,15 +86,14 @@ var emailVerify = function(email) {
 
 
 
+
+
 //Replace a seperator
 	var replaceSeperator = function(string, seperator, replacement) {
 			var stringReworked = string.split(seperator).join(replacement);
 			return stringReworked
 
-
-
-
-
+//Failed code for seperator
 //			var stringReplaced = stringSplit.join(replacement) 
 //			var replacedString = function (stringSplit) {
 //				for (var i=0; i <= stringSplit.length; i++) {
@@ -94,6 +103,9 @@ var emailVerify = function(email) {
 //				};	
 //			};
 };
+
+
+
 
 
 
@@ -137,6 +149,7 @@ var upperCase = function (caseString) {
 
 
 
+
 // Pattern recognition for phone number
 
 var phoneNumber = function(number) {
@@ -165,9 +178,16 @@ var phoneNumber = function(number) {
 };	
 
 
+
+
+
+
 //global variable
 
 var newLib = new library();
+
+
+
 
 
 //Main Code
@@ -177,6 +197,6 @@ console.log("Is this a valid phone number? " + newLib.phoneNumber("555-555-5555"
 console.log("This number will always have specific decimal places: " + newLib.decimalPlaces(342.2353242, 5));
 console.log("Is this a valid email address? "+ newLib.emailVerify("dmullis5@fullsail.edu"));
 console.log("Is this link valid? " + newLib.verifyLink("https://codeishard.com"));
-console.log("This string has been cased: " + newLib.upperCase("time management is key"));
+//console.log("This string has been cased: " + newLib.upperCase("time management is key"));   **Non functional
 console.log("This is a replaced seperator: " + newLib.replaceSeperator("this,is,sparta!", ",", "/"));
 console.log("This string as been converted to number: " + newLib.numberConvert("50", "50"));
