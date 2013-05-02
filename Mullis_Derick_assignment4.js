@@ -26,40 +26,61 @@ var emailVerify = function(email) {
 	
 	var mainSplit = email.split("@");
 	var split2 = mainSplit[1].split(".");
+	var mainLength = mainSplit.length;
+	var emailBeginning = mainSplit[0];
+		console.log(" Is this it? " + emailBeginning);	
 	
-	var leftSide = function( mainSplit[0] ) {
-		if (typeof(mainSplit[0]) === 'string') {
+	var leftSide = function(mainSplit) {					// make sure to pass in whole array before typeof function is called
+		if (typeof emailBeginning === 'string') {
 			return (true);
 			} else {
 			return (false);
 		};  
 	};
-	
-	var rightSide = function(split2) {
-		if (typeof(split2[1]) === 'string') {
-		return (true);
-		} else {
-		return (false);
-		};
-	};	
-	
-	var isDotComNumber = function(split2[1]) {
-		if (typeof(split2[1] === 'number')) {
-			return (true);
-			} else {
-			return (false);
-		};
-	};
-	
-	if ( leftSide === true && rightSide === true && isDotComNumber === false) {
-		return (true);
-		} else {
-		return (false);
-	};
 };
+
+	
+//		if (typeof(split2[1]) === 'string') {
+//		return (true);
+//		} else {
+//		return (false);
+//		};
+//	};	
+
+//	var isDotComNumber = function(split2) {
+//		if (typeof(split2[1] === 'number')) {
+//			return (true);
+//			} else {
+//			return (false);
+//		};
+//	};
+	
+//	if ( leftSide === true ) { //&& dotComValid === true && isDotComNumber === false) {
+//		return (true);
+//		} else {
+//		return (false);
+//	};
+//};
 
 
 //Convert a string of numbers into a number value ****NOT WORKING****
+
+
+
+
+//URL String Validate
+ 
+ var verifyLink = function(link) {
+ 	var http = link.substring(0, 7);
+ 	var https = link.substring(0, 8);
+ 	var options = ["http://", "https://"];
+ 	
+ 	if ( http === options[0] || https === options[1]) {
+ 		return true;
+ 		} else {
+ 		return false;
+ 	};
+ };
 
 
 
@@ -88,7 +109,8 @@ var phoneNumber = function(number) {
 	return {
 		"phoneNumber": phoneNumber,
 		"decimalPlaces": decimalPlaces,
-		"emailVerify": emailVerify
+		"emailVerify": emailVerify,
+		"verifyLink": verifyLink
 	};
 
 };	
@@ -96,6 +118,10 @@ var phoneNumber = function(number) {
 var newLib = new library();
 
 
+//Main Code
+
+
 console.log("Is this a valid phone number? " + newLib.phoneNumber("555-555-5555"));
 console.log("This number will always have specific decimal places: " + newLib.decimalPlaces(342.2353242, 5));
 console.log("Is this a valid email address? "+ newLib.emailVerify("dmullis5@fullsail.edu"));
+console.log("Is this link valid? " + newLib.verifyLink("https://codeishard.com"));
