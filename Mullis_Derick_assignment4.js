@@ -24,17 +24,18 @@ var smallestNumber = function ([array], number) {
 	
 var emailVerify = function(email) {
 	
-	var split = email.split("@");
+	var mainSplit = email.split("@");
+	var split2 = mainSplit[1](".");
 	
-	var leftSide = function( split[0] ) {
-		if (typeof(split[0]) === 'string');
+	var leftSide = function( mainSplit[0]) {
+		if (typeof(mainSplit[0]) === 'string') {
 			return (true);
 			} else {
 			return (false);
 		};  
 	};
-	var rightSide = function(split[1]) {
-		if (typeof(split[1]) === 'string') && isNaN) {
+	var rightSide = function(mainSplit[1]) {
+		if (typeof(mainSplit[1]) === 'string')) {
 		return (true);
 		} else {
 		return (false);
