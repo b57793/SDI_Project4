@@ -76,17 +76,23 @@ var emailVerify = function(email) {
 
 
 
-//Replace a seperator ****NOT WORKING****
+//Replace a seperator
 	var replaceSeperator = function(string, seperator, replacement) {
-			var stringSplit = string.split("")
-			var replacedString = function (stringSplit) {
-				for (var i=0; i <= stringSplit.length; i++) {
-				    	if (stringSplit[i] == seperator);
-        					(stringSplit[i] == replacement);
-        				return stringSplit[i];
-				};	
-			};
-			var replaceSeperator = replacedString
+			var stringReworked = string.split(seperator).join(replacement);
+			return stringReworked
+
+
+
+
+
+//			var stringReplaced = stringSplit.join(replacement) 
+//			var replacedString = function (stringSplit) {
+//				for (var i=0; i <= stringSplit.length; i++) {
+//				    	if (stringSplit[i] == seperator);
+//      					(stringSplit[i] == replacement);
+//        				return stringSplit[i];
+//				};	
+//			};
 };
 
 
