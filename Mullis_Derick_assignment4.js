@@ -28,7 +28,7 @@ var emailVerify = function(email) {
 	var split2 = mainSplit[1].split(".");
 	var mainLength = mainSplit.length;
 	var emailBeginning = mainSplit[0];
-		console.log(" Is this it? " + emailBeginning);	
+		console.log("Is this it? " + emailBeginning);	
 	
 	var leftSide = function(mainSplit) {					// make sure to pass in whole array before typeof function is called
 		if (typeof emailBeginning === 'string') {
@@ -87,7 +87,18 @@ var emailVerify = function(email) {
 
 //Title Case a string ****NOT WORKING****
 
+var upperCase = function (caseString) {
+	var seperateWords = caseString.split(" ");
+	
+	var theFunction = function(seperateWords) {
+		for ( var i = 0; i <= seperateWords.length; i++ ) {
+			seperateWords[i] = "Updated String" + seperateWords[i].charAt(0).toUpperCase() + seperateWords[i].substring(1);
+		};	
+			console.log("Here: " + theFunction)
 
+	};
+}; 
+	
 
 
 
@@ -110,7 +121,8 @@ var phoneNumber = function(number) {
 		"phoneNumber": phoneNumber,
 		"decimalPlaces": decimalPlaces,
 		"emailVerify": emailVerify,
-		"verifyLink": verifyLink
+		"verifyLink": verifyLink,
+		"upperCase": upperCase
 	};
 
 };	
@@ -125,3 +137,4 @@ console.log("Is this a valid phone number? " + newLib.phoneNumber("555-555-5555"
 console.log("This number will always have specific decimal places: " + newLib.decimalPlaces(342.2353242, 5));
 console.log("Is this a valid email address? "+ newLib.emailVerify("dmullis5@fullsail.edu"));
 console.log("Is this link valid? " + newLib.verifyLink("https://codeishard.com"));
+console.log("This string has been cased: " + newLib.upperCase("time management is key"));
