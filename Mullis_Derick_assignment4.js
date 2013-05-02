@@ -29,7 +29,7 @@ var phoneNumber = function(number) {
 	var section1 = number.substring(0, 2);
 	var section2 = number.substring(4, 6);
 	var section3 = number.substring(8, 11);
-		if ( section1 != isNaN && section2 != isNaN && section3 != isNaN || number.indexOf(3) && number.indexOf(7) === "-") {
+		if ( section1 >= 9 && section2 >= 9 && section3 >= 9 && number.charAt(3) === "-" && number.charAt(7) === "-") {
 			return (true);
 		} else { 
 			return (false);
