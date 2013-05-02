@@ -10,19 +10,10 @@ var library = function(){
 //round 2 decimal places
 
 var decimalPlaces = function (value, decimal) {
-	var n = value.toFixed(decimal); 
-	return n;
+	var number = value.toFixed(decimal); 
+	return number;
 };
 
-
-
-
-//Smallest Number in an array that is greater than the given number ****NOT WORKING****
-
-var smallestNumber = function ([array], number) {
-	
-
-};
 
 
 
@@ -83,18 +74,22 @@ var emailVerify = function(email) {
 
 
 
+
+
 //Replace a seperator ****NOT WORKING****
 	var replaceSeperator = function(string, seperator, replacement) {
 			var stringSplit = string.split("")
 			var replacedString = function (stringSplit) {
 				for (var i=0; i <= stringSplit.length; i++) {
-				    	if (stringSplit[i] == seperator)
-        					stringSplit[i] = replacement;
+				    	if (stringSplit[i] == seperator);
+        					(stringSplit[i] == replacement);
         				return stringSplit[i];
 				};	
 			};
 			var replaceSeperator = replacedString
 };
+
+
 
 
 
