@@ -8,8 +8,8 @@ var library = function(){
 //round 2 decimal places
 
 var decimalPlaces = function (value, decimal) {
-	
-
+	var n = value.toFixed(decimal); 
+	return n;
 };
 
 //Smallest Number in an array that is greater than the given number
@@ -39,10 +39,10 @@ var phoneNumber = function(number) {
 			
 
 	return {
-		"phoneNumber": phoneNumber
-	
+		"phoneNumber": phoneNumber,
+		"decimalPlaces": decimalPlaces
+		
 	};
-
 
 };	
 
@@ -50,3 +50,4 @@ var newLib = new library();
 
 
 console.log("Is this a valid phone number? " + newLib.phoneNumber("704-221-3915"));
+console.log("This number will always have specific decimal places: " + newLib.decimalPlaces(342.2353242, 5));
