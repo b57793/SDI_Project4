@@ -26,7 +26,7 @@ var emailVerify = function(email) {
 			return (false);
 		} else {
 			return (true);
-		};
+		};return
 };
 	
 	
@@ -88,12 +88,12 @@ var emailVerify = function(email) {
 
 
 
-//Replace a seperator
-	var replaceSeperator = function(string, seperator, replacement) {
-			var stringReworked = string.split(seperator).join(replacement);
+//Replace a separator
+	var replaceSeparator = function(string, separator, replacement) {
+			var stringReworked = string.split(separator).join(replacement);
 			return stringReworked
 
-//Failed code for seperator
+//Failed code for separator
 //			var stringReplaced = stringSplit.join(replacement) 
 //			var replacedString = function (stringSplit) {
 //				for (var i=0; i <= stringSplit.length; i++) {
@@ -165,13 +165,15 @@ var phoneNumber = function(number) {
 	
 			
 
+
+
 	return {
 		"phoneNumber": phoneNumber,
 		"decimalPlaces": decimalPlaces,
 		"emailVerify": emailVerify,
 		"verifyLink": verifyLink,
 		"upperCase": upperCase,
-		"replaceSeperator": replaceSeperator,
+		"replaceSeparator": replaceSeparator,
 		"numberConvert": numberConvert
 	};
 
@@ -198,5 +200,5 @@ console.log("This number will always have specific decimal places: " + newLib.de
 console.log("Is this a valid email address? "+ newLib.emailVerify("dmullis5@fullsail.edu"));
 console.log("Is this link valid? " + newLib.verifyLink("https://codeishard.com"));
 //console.log("This string has been cased: " + newLib.upperCase("time management is key"));   **Non functional
-console.log("This is a replaced seperator: " + newLib.replaceSeperator("this,is,sparta!", ",", "/"));
+console.log("This is a replaced separator: " + newLib.replaceSeparator("this,is,sparta!", ",", "/"));
 console.log("This string as been converted to number: " + newLib.numberConvert("50", "50"));
